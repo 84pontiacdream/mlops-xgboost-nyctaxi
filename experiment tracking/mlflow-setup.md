@@ -7,7 +7,7 @@ In this section we'll:
 
 
 ## 1. Launch the MLflow Instance
----
+
 Launch an EC2 instance for the remote tracking server.  From the console got to EC2, Instances and select 'Launch Instances'.
 
  You can just use a free tier Amazon Linux AMI with t2.micro instance type. Create or select  a key pair and leave everything else as default. 
@@ -15,7 +15,7 @@ Launch an EC2 instance for the remote tracking server.  From the console got to 
 Now launch the instance and wait until the 'Instance State' is 'ready' and the status  checks have completed.
 
 ## 2. Configure security group inbound rules
----
+
 Select the MLflow EC2 instance, select the 'Security' tab and then select the security group. Edit inbound rules and add the following rule:
 ![Alt text](../images/mlflow_ec2_inbound_rule.png)
 
@@ -60,7 +60,7 @@ Select the following options:
 <span style="color:#4568dc">Instance configuration: </span> ' db.t3.micro '\
 ![Alt text](../images/rds_instance_config.png)
 
-<span style="color:#4568dc">Storage: </span>
+<span style="color:#4568dc">Storage: </span> \
 ![Alt text](../images/rds_storage_config.png)
 
 <span style="color:#4568dc">Connectivity: </span> Leave all as default or configure as you wish.
@@ -218,7 +218,7 @@ To reduce EC2 charges on AWS I will just run this part on my local machine.
 * When the code has finished running, navigate MLflow, and sort experiment by rmse
 ![Alt text](../images/mlflow_sort_runs.png)
 * Click the experiment with lowest rmse 
-* Make a record of the parameters
+* Make a record of the parameters \
 ![Alt text](../images/mlflow_parameters.png)
 
 ## In the next section we set up the Prefect server, productionize the code in this notebook, and produce a model in the MLflow model registry.
