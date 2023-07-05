@@ -21,7 +21,6 @@ Select the MLflow EC2 instance, select the 'Security' tab and then select the se
 
 
 ## 3. Give instance permission to access S3 and RDS
----
 
 S3 is used for the MLflow artifact store and a PostgreSQL database in RDS is used for the backend store so the instance needs to be able to have permission to access both services. To do this we create an IAM role which has access to S3 and RDS.
 
@@ -34,14 +33,14 @@ S3 is used for the MLflow artifact store and a PostgreSQL database in RDS is use
 ![Alt text](../images/mlflow_ec2_IAMrole_SM.png)
 
 ## 4. Attach IAM role to MLflow server instance
----
+
 Navigate back to EC2 and select your instance. Click Actions -> Security -> Modify IAM role. 
 ![Alt text](../images/mlflow_ec2_modify_IAM_role.png)
 Select the IAM role you created in the previous step and click 'Update IAM role'
 
 
 ## 5. Create RDS instance forMLflow backend store
----
+
 We will be using an Amazon RDS database instance with PostgreSQL as the MLflow backend store. Now we will set this up. Navigate to the RDS dashboard from the Console and select 'Create database'.
 ![Alt text](../images/rds_create_database.png)
 Select the following options:
@@ -49,7 +48,7 @@ Select the following options:
 <span style="color:#4568dc">Database creation method: </span> 'Standard create'
 ![image](../images/rds_db_creation_method.png)
 
-<span style="color:#4568dc">Engine: </span> ' PostgreSQL'
+<span style="color:#4568dc">Engine: </span> ' PostgreSQL' \
 ![Alt text](../images/rds_engine_postgreSQL.png)
 
 <span style="color:#4568dc">Templates: </span>' Free Tier ' \
@@ -76,17 +75,18 @@ Select the following options:
 Scroll to the end and click 'Create Database'
 
 ## 6. Edit inbound rules for RDS instance
+
 Click on the instance. Under Connectivity & Security -> 'VPC security groups' and add inbound rule where the source is the security group of the Mlflow instance:
 ![Alt text](../images/rds_inbound_rules.png)
 
 ## 7. Create S3 bucket for MLflow artifacts
----
+
 Choose a globally unique name for the bucket.
 ![Alt text](../images/s3_bucket_mlflow.png)
 
 
 ## 8. Initialize Mlflow
----
+
 1. Open terminal and connect to the EC2 instance with SSH
 
 2. Current Amazon linux 2023 has python 3.9 and for Prefect we need to use Python 3.10+ so we install Python 3.11 here too for consistency.
@@ -142,7 +142,7 @@ Choose a globally unique name for the bucket.
 
 
 ## 9. Run notebook to carry out experiments in MLflow
----
+
 This can either be done on your local machine or with the 'mlopszoomcamp-instance' EC2 instance. \
 To reduce EC2 charges on AWS I will just run this part on my local machine.
 ### Local Machine
