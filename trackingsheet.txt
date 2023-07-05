@@ -3,28 +3,28 @@
 #######################################
 
 Main MLOps Instance
--------------------
+---------------------------------------
 Instance name: 
 Public IPv4: 
 IPv4 DNS: 
 Key pair name: 
 Security group: 
 SSH Connect: 
-Key location:
+Key location: 
 
 MLflow Instance
--------------------
-Instance name: 
-Public IPv4:
-IPv4 DNS:
-Key pair name:
-Security group:
-SSH Connect:
-Instance role name:
-Key location:
+---------------------------------------
+Instance name:  
+Public IPv4: 
+IPv4 DNS: 
+Key pair name: 
+Security group: 
+SSH Connect: 
+Instance role name: 
+Key location: 
 
 Prefect Instance
--------------------
+---------------------------------------
 Instance name: 
 Public IPv4: 
 IPv4 DNS: 
