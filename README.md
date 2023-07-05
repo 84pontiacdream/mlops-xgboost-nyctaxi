@@ -5,14 +5,13 @@
 This repo contains my notes & files from the MLOps Zoomcamp project using [NYC taxi data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) to demonstrate MLOps processes. Instead of carrying out the project on a local system I have set up resources using AWS. I also made some slight changes such as using EC2 instance roles and  AWS Secrets Manager. If you want to follow along then you'll need an AWS account within the free tier (minimize costs) and some experience using AWS.
 
 ## Costs
----
 
 There are small charges but it is mostly be free.  AWS Free tier information: [AWS Free Tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=categories%23serverless)
 
 TIP: Project is long so stop / terminate instances when taking a break. Create an AMI for the main Linux environment to prevent having to install packages repeatably.
 
 ## AWS Resources
----
+
 Here is a list of the AWS resources that will be created: 
 * EC2 Instance for Linux Environment
 * EC2 Instance for MLflow server
@@ -26,12 +25,13 @@ Here is a list of the AWS resources that will be created:
 
 You will also need to configure a named AWS profile. [This video](https://www.youtube.com/watch?v=vTJSV5xeQ5c) shows how you can do this.\
 I created a user profile with an IAM user with full admin access for this demo but you can also consider creating a user with more limited access. (apply least-privilege permissions).
+
 ## Tracking sheet
----
+
 Use trackingsheet.txt to keep track of the infrastructure details. With so many resources it is easy to loose track of IP addresses and the names of S3 buckets. Download the file and save locally updating each time you create a resource.
 
 ## Set up Linux Environment Virtual Machine
----
+git add .
 I'm working on a windows system so I spin up an EC2 instance in AWS to run notebooks and code. This instance does charge around $0.10 depending on region so I stop the instance when I'm not using it or create an AMI after installing the required packages, terminate the instance and then create a new instance when needed using the AMI.
 
 ### 1. Launch the EC2 instance.
