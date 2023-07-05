@@ -31,7 +31,7 @@ I created a user profile with an IAM user with full admin access for this demo b
 Use trackingsheet.txt to keep track of the infrastructure details. With so many resources it is easy to loose track of IP addresses and the names of S3 buckets. Download the file and save locally updating each time you create a resource.
 
 ## Set up Linux Environment Virtual Machine
-git add .
+
 I'm working on a windows system so I spin up an EC2 instance in AWS to run notebooks and code. This instance does charge around $0.10 depending on region so I stop the instance when I'm not using it or create an AMI after installing the required packages, terminate the instance and then create a new instance when needed using the AMI.
 
 ### 1. Launch the EC2 instance.
