@@ -141,7 +141,7 @@ aws configure --profile [NAME]
 export AWS_PROFILE=[NAME]
 ```
 
-<span style="color:green">**->**</span> Prefect Orion is running on prefect-server and the GUI is started, so now run: \
+<span style="color:green">**->**</span> Prefect Orion is running on prefect-server and the GUI is started, so now run: 
 
 ```console
 prefect config set PREFECT_API_URL="http://<prefect_instance_IP>:4200/api"

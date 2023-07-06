@@ -162,13 +162,42 @@ py --version
 pip show xgboost
 ```
 
-<span style="color:green">**->**</span>  Configure AWS credentials. Open up a new terminal and type:
+<span style="color:green">**->**</span>  Configure AWS credentials.
+
+ Create a new IAM user and attach the following policy which gives the user access to S3, RDS and Secrets Manager:
+
+```json
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "AllowS3Access",
+			"Effect": "Allow",
+			"Action": "s3:*",
+			"Resource": "*"
+		},
+		{
+			"Sid": "AllowRDSAccess",
+			"Effect": "Allow",
+			"Action": "rds:*",
+			"Resource": "*"
+		},
+		{
+			"Sid": "AllowSecretsManagerAccess",
+			"Effect": "Allow",
+			"Action": "secretsmanager:*",
+			"Resource": "*"
+		}
+	]
+}
+```
+Then set up access key for this user and configure profile:
 
 ```console
 aws configure --profile [name]
 ```
 
-<span style="color:green">**->**</span> Then when prompted enter the 'AWS Access Key ID' and corresponding 'AWS Secret Access Key' and 'Default region name'.
+Then when prompted enter the 'AWS Access Key ID' and corresponding 'AWS Secret Access Key' and 'Default region name'.
 
 <span style="color:green">**->**</span> Open up XGboost.ipynb in VS Code
 
