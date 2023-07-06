@@ -205,4 +205,4 @@ trials=Trials()
 
 ![Alt text](../images/mlflow_parameters.png)
 
-## In the next section we set up the Prefect server, productionize the code in this notebook, and produce a model in the MLflow model registry.
+## In the next section we set up the Prefect server, run the productionized code and produce a model in the MLflow model registry.

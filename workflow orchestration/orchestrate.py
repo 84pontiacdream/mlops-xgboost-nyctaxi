@@ -9,7 +9,7 @@ from sklearn.metrics import mean_squared_error
 import mlflow
 import xgboost as xgb
 from prefect import flow, task
-from prefect_aws.s3 import S3Bucket
+from prefect.filesystems import S3
 from prefect.artifacts import create_markdown_artifact
 from datetime import date
 
@@ -138,13 +138,11 @@ def main_flow(
     """The main training pipeline"""
 
     # MLflow settings
-    mlflow.set_tracking_uri("sqlite:///mlflow.db")
+    mlflow.set_tracking_uri("sqlite:///mlflow.db") #insert tracking URI
     mlflow.set_experiment("nyc-taxi-experiment")
 
     # Load
-    s3_bucket = S3Bucket.load("s3-bucket-block")
-    # Download objects withing a folder from the S3 bucket to a local folder
-    # s3_bucket.download_folder_to_path(from_folder="data", to_folder="data")
+    s3_bucket = S3.load("s3-block-name")
 
     df_train = read_data(train_path)
     df_val = read_data(val_path)
