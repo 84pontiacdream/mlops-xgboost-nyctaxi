@@ -8,7 +8,7 @@ from flask import Flask, request, jsonify
 MLFLOW_TRACKING_URI = ''
 RUN_ID = ''
 
-mlflow.set_tracking_uri("MLFLOW_TRACKING_URI")
+mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 
 client = MlflowClient(tracking_uri=MLFLOW_TRACKING_URI)
 
