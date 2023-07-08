@@ -5,21 +5,16 @@ import mlflow
 mlflow.tracking import MlflowClient
 from flask import Flask, request, jsonify
 
-
-RUN_ID = ''
 MLFLOW_TRACKING_URI = ''
+RUN_ID = ''
 
-mlflow.set_tracking_uri("")
+mlflow.set_tracking_uri("MLFLOW_TRACKING_URI")
 
 client = MlflowClient(tracking_uri=MLFLOW_TRACKING_URI)
 
-path = client.download_artifacts(run_id=RUN_ID, path='dict_vectorizer.bin')
-print(f'downloading the dict vectorizer to {path}')
-
-with open('path', 'rb') as f_out:
-    dv = pickle.load(f_out)
-
-logged_model = f'runs:/{RUN_ID}/artifacts/model'
+logged_model = f'runs:/{RUN_ID}/model'
+# Fetch model directly from S3
+# logged_model = f's3://{PATH_TO_MODEL}' #e.g 's3://mlflow-models-alexey/1/{RUN_ID}/
 model = mlflow.pyfunc.load_model(logged_model)
 
 
@@ -31,12 +26,12 @@ def prepare_features(ride):
 
 
 def predict(features):
-    X = dv.transform(features)
-    preds = model.predict(X)
+    preds = model.predict(features)
     return float(preds[0])
 
-
+# Create an instance of Flask application
 app = Flask('duration-prediction')
+
 
 
 @app.route('/predict', methods=['POST'])
