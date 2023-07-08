@@ -2,7 +2,7 @@
 
 <img src="images\aws_logo.png" width="135" height="75"/> <img src="images\mlflow_logo.png" width="125" height="75"/><img src="images\prefect_logo.png" width="135" height="75"/> <img src="images\docker_logo.png" width="135" height="75"/> <img src="images\evidently_ai_logo.png" width="135" height="75"/> 
 
-This repo contains my notes & files from the MLOps Zoomcamp project using [NYC taxi data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) to demonstrate MLOps processes. Instead of carrying out the project on a local system I have set up resources using AWS. I also made some slight changes such as using EC2 instance roles and  AWS Secrets Manager. If you want to follow along then you'll need an AWS account within the free tier (minimize costs) and some experience using AWS.
+This repo contains my notes & files from the MLOps Zoomcamp project using [NYC taxi data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) to demonstrate MLOps processes. Instead of carrying out the project on a local system I have set up resources using AWS. I also made some slight changes such as using EC2 instance roles, AWS Secrets Manager for RDS Password and I have used XGBoost throughout instead of Random Forest Regression. 
 
 ## Costs
 
