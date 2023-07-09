@@ -4,6 +4,12 @@
 
 This repo contains my notes & files from the MLOps Zoomcamp project using [NYC taxi data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) to demonstrate MLOps processes. Instead of carrying out the project on a local system I have set up resources using AWS. I also made some slight changes such as using EC2 instance roles, AWS Secrets Manager for RDS Password and I have used XGBoost throughout instead of Random Forest Regression. 
 
+* MLFlow - experiment tracking
+* Prefect - workflow orchestration
+* Docker - containerization
+* Flask - deploying model and a web-service
+* Evidently - monitoring
+
 ## Costs
 
 There are small charges but it is mostly be free.  AWS Free tier information: [AWS Free Tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=categories%23serverless)
